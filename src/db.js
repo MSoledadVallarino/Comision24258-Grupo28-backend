@@ -20,10 +20,7 @@ connection.connect((err) =>
         }
     
     console.log("Conectado a la base de datos");
-    connection.query("SELECT * FROM productos", (err, result) =>
-    {
-        console.log(err);
-    });
+
     
     /*connection.query("CREATE DATABASE IF NOT EXISTS cgigena_vivero", (err, result) =>
     {

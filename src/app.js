@@ -23,5 +23,9 @@ app.get("/productos", async (req,res) =>{
     console.log(result)
 });
 
+app.get("/", (req, res)=> {
+    res.send("VIVERO!!");
+});
+
 // Start server
 app.listen(PORT, ()=>{console.log(`Servidor escuchando en el puerto ${PORT}`)});
