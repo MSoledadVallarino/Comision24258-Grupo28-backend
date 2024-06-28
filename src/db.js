@@ -5,10 +5,10 @@ dotenv.config()
 
 const connection = mySql.createConnection(
     {
-        host: process.env.host,
-        user: process.env.user,
-        password: process.env.password,
-        database: process.env.database,
+        host: 'mysql-cgigena.alwaysdata.net', //process.env.host,
+        user: 'cgigena',// process.env.user,
+        password: '&CoronaFS2024', //process.env.password,
+        database: 'cgigena_vivero', //process.env.database,
 });  
 
 connection.connect((err) =>
@@ -20,8 +20,12 @@ connection.connect((err) =>
         }
     
     console.log("Conectado a la base de datos");
-
-    connection.query("CREATE DATABASE IF NOT EXISTS usuarios_db", (err, result) =>
+    connection.query("SELECT * FROM productos", (err, result) =>
+    {
+        console.log(err);
+    });
+    
+    /*connection.query("CREATE DATABASE IF NOT EXISTS cgigena_vivero", (err, result) =>
     {
         if(err)
             {
@@ -31,9 +35,9 @@ connection.connect((err) =>
         
         console.log("Base de datos asegurada");
 
-        connection.changeUser({database: 'usuarios_db'}, err => {
+        connection.changeUser({database: 'cgigena_vivero'}, err => {
             if(err)
-                {console.error("Error al cambiar a usuarios_db", err);
+                {console.error("Error al cambiar a cgigena_vivero", err);
                     return;
                 }
 
@@ -45,8 +49,8 @@ connection.connect((err) =>
             mail VARCHAR(255) NOT NULL
         );
     `;
-
-        connection.query(createTableQuery,(err, results) =>
+    */            
+    /*    connection.query(createTableQuery,(err, results) =>
         {
             if(err)
                 {
@@ -57,9 +61,7 @@ connection.connect((err) =>
             console.log("Tabla asegurada");
         });
     });
+});*/
 });
-    });
-
-
 
 module.exports = connection;

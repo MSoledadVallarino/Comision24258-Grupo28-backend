@@ -17,9 +17,9 @@ app.use(morgan("dev"));
 
 
 //Rutas
-app.get("/items_tienda", async (req,res) =>{
+app.get("/productos", async (req,res) =>{
     const connection = await database.connection();
-    const result = connection.query("SELECT * FROM usuarios_db");
+    const result = connection.query("SELECT * FROM productos");
     console.log(result)
 });
 
