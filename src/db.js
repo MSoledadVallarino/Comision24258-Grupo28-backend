@@ -5,10 +5,10 @@ dotenv.config()
 
 const connection = mySql.createConnection(
     {
-        host: 'mysql-cgigena.alwaysdata.net', //process.env.host,
-        user: 'cgigena',// process.env.user,
-        password: '&CoronaFS2024', //process.env.password,
-        database: 'cgigena_vivero', //process.env.database,
+        host: 'mysqljcgigena.alwaysdata.net', //process.env.host,
+        user: 'jcgigena',// process.env.user,
+        password: '&Grupo28', //process.env.password,
+        database: 'jcgigena_vivero', //process.env.database,
 });  
 
 connection.connect((err) =>
