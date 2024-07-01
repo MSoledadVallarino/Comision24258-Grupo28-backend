@@ -23,9 +23,12 @@ app.get("/productos", async (req,res) =>{
     console.log(result)
 });
 
-app.get("/", (req, res)=> {
-    res.send("VIVERO!!");
-});
-
+const PORT = process.env.PORT || 3000;
+const HOST = 'jcgigena.alwaysdata.net';// process.env.HOST || 'http://localhost';
+app.listen(PORT, ()=> console.log(`${HOST}:${PORT}`));
+app.get('/', (req,res) => 
+    {
+        res.send(`HOLA VIVERO DESDE EL HOST ${HOST}: PUERTO: ${PORT}`);
+    });
 // Start server
 app.listen(PORT, ()=>{console.log(`Servidor escuchando en el puerto ${PORT}`)});
